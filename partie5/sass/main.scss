@@ -1,0 +1,58 @@
+@mixin myTestDecoration{
+    text-decoration: line-through;
+}
+@mixin myFs($fs){
+    font-size: $fs;
+
+
+}
+@mixin BlocOptions($h:100px,$w:200px,$b:red){
+    height: $h;
+    width: $w;
+    background-color:$b;
+}
+.boite{
+    border: 1px solid black;
+    display: flex;
+    height: 1200px;
+    justify-content: start;
+    align-items: center;
+    align-items: end;
+    gap: 50px;
+    &__1{
+        @include BlocOptions(300px,500px,aqua);  
+    }
+    &__2{
+        @include BlocOptions(300px,500px,green);
+    }
+    &__3{
+        @include BlocOptions(300px,500px,violet);  
+    }
+}
+
+.custom{
+    &1{
+        font-style: italic;
+        color: black;
+        @include myTestDecoration();
+        @include myFs(50px);
+    }
+    &2{
+        font-style: italic;
+        color: red;
+        @include myTestDecoration();
+        @include myFs(50px);
+    }
+    &3{
+        font-style: italic;
+        color: blue;
+        @include myTestDecoration();
+        @include myFs(50px);
+    }
+    &4{
+        font-style: italic;
+        color: green;
+        @include myTestDecoration();
+        @include myFs(50px);
+    }
+}
